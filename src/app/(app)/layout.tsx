@@ -45,7 +45,7 @@ export default async function AppLayout({
       {/* Skip navigation link — visible on focus only */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-indigo-500 focus:text-white focus:rounded-xl focus:outline-none focus:outline-2"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-500 focus:text-slate-950 focus:font-semibold focus:rounded-xl focus:outline-none focus:outline-2 focus:outline-amber-400"
       >
         Skip to content
       </a>
@@ -60,12 +60,14 @@ export default async function AppLayout({
         {/* Desktop/Tablet Sidebar (>=768px) */}
         <Sidebar user={userData} />
 
-        {/* Main Content Area */}
-        <div className="flex-1 flex flex-col md:pl-[104px] lg:pl-[280px] md:pr-6 md:py-6 p-4 max-w-7xl w-full mx-auto">
-          <AppHeader />
-          <main id="main-content" className="flex-1 flex flex-col">
-            {children}
-          </main>
+        {/* Main Content Area: symmetrically centered inside remaining canvas */}
+        <div className="flex-1 flex flex-col md:pl-[104px] lg:pl-[272px] transition-all duration-200">
+          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 flex-1 flex flex-col">
+            <AppHeader />
+            <main id="main-content" className="flex-1 flex flex-col">
+              {children}
+            </main>
+          </div>
         </div>
       </div>
     </TaskDialogProvider>

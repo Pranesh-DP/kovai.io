@@ -304,7 +304,7 @@ export function TaskFormDialog({
               htmlFor="task-title-input"
               className="text-xs font-medium text-slate-200"
             >
-              Title <span className="text-indigo-400">*</span>
+              Title <span className="text-amber-400">*</span>
             </label>
             {title.length > 100 && (
               <span
@@ -340,10 +340,10 @@ export function TaskFormDialog({
             aria-describedby={
               fieldErrors.title ? "task-title-error" : undefined
             }
-            className={`w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-900/60 border text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
+            className={`w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-950/70 border text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
               fieldErrors.title
                 ? "border-red-500/60 focus:border-red-500"
-                : "border-white/10 focus:border-indigo-400/50"
+                : "border-amber-500/20 focus:border-amber-400/50"
             }`}
           />
           {fieldErrors.title && (
@@ -392,10 +392,10 @@ export function TaskFormDialog({
             aria-describedby={
               fieldErrors.notes ? "task-notes-error" : undefined
             }
-            className={`w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-900/60 border text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400 transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed ${
+            className={`w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-950/70 border text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed ${
               fieldErrors.notes
                 ? "border-red-500/60 focus:border-red-500"
-                : "border-white/10 focus:border-indigo-400/50"
+                : "border-amber-500/20 focus:border-amber-400/50"
             }`}
           />
           {fieldErrors.notes && (
@@ -412,13 +412,13 @@ export function TaskFormDialog({
         {/* Status Selector (Create mode only) */}
         {mode === "create" && (
           <div className="flex flex-col gap-2">
-            <span className="text-xs font-medium text-slate-200">
+            <span className="text-xs font-semibold text-slate-200">
               Initial Status
             </span>
             <div
               role="radiogroup"
               aria-label="Initial task status"
-              className="flex items-center p-1 rounded-xl bg-slate-900/60 border border-white/10 gap-1"
+              className="flex items-center p-1 rounded-xl bg-slate-950/70 border border-amber-500/20 gap-1 shadow-inner"
             >
               {STATUS_OPTIONS.map((opt) => {
                 const isSelected = status === opt.status;
@@ -432,9 +432,13 @@ export function TaskFormDialog({
                     aria-checked={isSelected}
                     disabled={isSaving}
                     onClick={() => setStatus(opt.status)}
-                    className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-medium transition-all select-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400 ${
+                    className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-semibold transition-all select-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 ${
                       isSelected
-                        ? "bg-white/15 text-white shadow-sm border border-white/20"
+                        ? opt.status === "in_progress"
+                          ? "bg-amber-500/20 text-amber-300 border border-amber-400/40 shadow-sm"
+                          : opt.status === "complete"
+                            ? "bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 shadow-sm"
+                            : "bg-white/15 text-white shadow-sm border border-white/20"
                         : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
                     }`}
                   >
@@ -444,8 +448,8 @@ export function TaskFormDialog({
                           ? opt.status === "complete"
                             ? "text-emerald-400"
                             : opt.status === "in_progress"
-                              ? "text-indigo-400"
-                              : "text-slate-300"
+                              ? "text-amber-400"
+                              : "text-slate-200"
                           : "text-slate-500"
                       }`}
                       aria-hidden="true"
@@ -459,7 +463,7 @@ export function TaskFormDialog({
         )}
 
         {/* Actions row: Cancel & Save */}
-        <div className="flex items-center justify-end gap-3 mt-4 pt-3 border-t border-white/10">
+        <div className="flex items-center justify-end gap-3 mt-4 pt-3 border-t border-amber-500/20">
           <Button
             type="button"
             variant="ghost"

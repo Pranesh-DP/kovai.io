@@ -104,16 +104,16 @@ export function MobileNav({ user }: MobileNavProps) {
   }, [isOpen]);
 
   return (
-    <header className="md:hidden sticky top-0 z-40 w-full px-4 py-3 glass border-b border-white/10 flex items-center justify-between">
+    <header className="md:hidden sticky top-0 z-40 w-full px-4 py-3 glass border-b border-amber-500/20 flex items-center justify-between">
       <Link
         href="/dashboard"
-        className="flex items-center gap-2 text-slate-100 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400 rounded-lg p-1"
+        className="flex items-center gap-2 text-slate-100 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 rounded-lg p-1"
         aria-label="Clearpane Home"
       >
-        <div className="h-8 w-8 rounded-lg bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center text-indigo-400">
-          <Layers className="h-4 w-4" aria-hidden="true" />
+        <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-amber-400 via-amber-500 to-yellow-600 border border-amber-300/40 flex items-center justify-center text-slate-950 shadow-md shadow-amber-500/20">
+          <Layers className="h-4 w-4 stroke-[2.5]" aria-hidden="true" />
         </div>
-        <span className="font-semibold tracking-tight text-base">Clearpane</span>
+        <span className="font-bold tracking-tight text-base bg-gradient-to-r from-slate-50 to-amber-200 bg-clip-text text-transparent">Clearpane</span>
       </Link>
 
       <div className="flex items-center gap-2">
@@ -121,7 +121,7 @@ export function MobileNav({ user }: MobileNavProps) {
           size="sm"
           onClick={() => openCreateTask()}
           aria-label="New task"
-          className="gap-1.5 min-h-[44px] px-3"
+          className="gap-1.5 min-h-[44px] px-3 font-semibold"
         >
           <Plus className="h-4 w-4" aria-hidden="true" />
           <span className="text-xs">New task</span>
@@ -134,7 +134,7 @@ export function MobileNav({ user }: MobileNavProps) {
           aria-label="Open menu"
           aria-expanded={isOpen}
           aria-controls="mobile-drawer"
-          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400"
+          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-slate-300 hover:text-amber-300 hover:bg-amber-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
         >
           <Menu className="h-5 w-5" aria-hidden="true" />
         </button>
@@ -144,7 +144,7 @@ export function MobileNav({ user }: MobileNavProps) {
       {isOpen && (
         <div
           role="presentation"
-          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md transition-opacity"
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               setIsOpen(false);
@@ -158,16 +158,16 @@ export function MobileNav({ user }: MobileNavProps) {
             role="dialog"
             aria-modal="true"
             aria-label="Navigation Menu"
-            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] glass-strong border-r border-white/15 p-6 flex flex-col justify-between shadow-2xl focus:outline-none"
+            className="fixed top-0 bottom-0 left-0 w-72 max-w-[85vw] glass-strong border-r border-amber-500/25 p-6 flex flex-col justify-between shadow-2xl focus:outline-none"
             tabIndex={-1}
           >
             <div className="flex flex-col gap-6">
-              <div className="flex items-center justify-between pb-4 border-b border-white/10">
+              <div className="flex items-center justify-between pb-4 border-b border-amber-500/20">
                 <div className="flex items-center gap-2.5">
-                  <div className="h-8 w-8 rounded-lg bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center text-indigo-400">
-                    <Layers className="h-4 w-4" aria-hidden="true" />
+                  <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-amber-400 to-yellow-600 border border-amber-300/40 flex items-center justify-center text-slate-950">
+                    <Layers className="h-4 w-4 stroke-[2.5]" aria-hidden="true" />
                   </div>
-                  <span className="font-semibold text-slate-100">Clearpane</span>
+                  <span className="font-bold text-slate-100">Clearpane</span>
                 </div>
                 <button
                   type="button"
@@ -176,7 +176,7 @@ export function MobileNav({ user }: MobileNavProps) {
                     menuButtonRef.current?.focus();
                   }}
                   aria-label="Close menu"
-                  className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400"
+                  className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-amber-200 hover:bg-amber-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
                 >
                   <X className="h-5 w-5" aria-hidden="true" />
                 </button>
@@ -194,13 +194,13 @@ export function MobileNav({ user }: MobileNavProps) {
                       href={item.href}
                       aria-current={isActive ? "page" : undefined}
                       onClick={() => setIsOpen(false)}
-                      className={`flex items-center gap-3 px-3.5 py-3 rounded-xl text-base transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400 ${
+                      className={`flex items-center gap-3 px-3.5 py-3 rounded-xl text-base transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 ${
                         isActive
-                          ? "bg-indigo-500/15 text-indigo-200 font-medium border border-indigo-500/30 shadow-sm shadow-indigo-500/10"
-                          : "text-slate-300 hover:text-white hover:bg-white/5 border border-transparent"
+                          ? "bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-transparent text-amber-300 font-semibold border-l-2 border-l-amber-400 border-amber-500/20 shadow-sm shadow-amber-500/10"
+                          : "text-slate-300 hover:text-amber-200 hover:bg-amber-500/[0.08] border border-transparent"
                       }`}
                     >
-                      <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
+                      <Icon className={`h-5 w-5 shrink-0 ${isActive ? "text-amber-400" : ""}`} aria-hidden="true" />
                       <span>{item.name}</span>
                     </Link>
                   );

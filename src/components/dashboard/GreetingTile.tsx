@@ -41,16 +41,21 @@ export function GreetingTile({ userName, onQuickAdd }: GreetingTileProps) {
   }
 
   return (
-    <div className="glass border border-white/10 p-6 sm:p-8 rounded-3xl flex flex-col justify-between gap-6 shadow-xl relative overflow-hidden">
+    <div className="glass gold-card-hover border border-amber-500/20 p-6 sm:p-8 rounded-3xl flex flex-col justify-between gap-6 shadow-xl relative overflow-hidden">
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2 text-indigo-400 text-xs font-medium tracking-wide uppercase">
-          <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-          <span>Overview</span>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2 text-amber-400 text-xs font-bold tracking-widest uppercase">
+            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+            <span>Overview ✦ Focus Studio</span>
+          </div>
+          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20">
+            DAY STREAK ACTIVE
+          </span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-          {greeting}, {firstName}
+        <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+          {greeting}, <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent">{firstName}</span>
         </h2>
-        <p className="text-sm text-slate-400 leading-relaxed max-w-lg">
+        <p className="text-sm text-slate-300 leading-relaxed max-w-lg">
           Here is your calm workspace summary. Focus on what matters most today.
         </p>
       </div>
@@ -64,15 +69,15 @@ export function GreetingTile({ userName, onQuickAdd }: GreetingTileProps) {
           type="text"
           value={quickTitle}
           onChange={(e) => setQuickTitle(e.target.value)}
-          placeholder="What needs doing?"
+          placeholder="What needs doing today?"
           maxLength={120}
-          className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-slate-900/60 border border-white/10 text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400 transition-colors"
+          className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-slate-950/70 border border-amber-500/20 text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 focus:border-amber-400/50 transition-colors shadow-inner"
         />
         <Button
           type="submit"
           disabled={!quickTitle.trim() || !isOnline}
           size="md"
-          className="gap-1.5 shrink-0"
+          className="gap-1.5 shrink-0 font-semibold"
           title={!isOnline ? "Unavailable while offline" : undefined}
         >
           <Plus className="h-4 w-4" aria-hidden="true" />

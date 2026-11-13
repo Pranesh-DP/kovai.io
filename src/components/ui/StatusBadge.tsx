@@ -22,15 +22,15 @@ export function StatusBadge({
   > = {
     planned: {
       icon: Circle,
-      className: "bg-slate-500/15 text-slate-300 border-slate-500/30",
+      className: "bg-zinc-800/80 text-zinc-300 border-zinc-700/60",
     },
     in_progress: {
       icon: CircleDot,
-      className: "bg-indigo-500/15 text-indigo-300 border-indigo-500/30",
+      className: "bg-amber-500/20 text-amber-300 border-amber-400/50 shadow-[0_0_12px_rgba(245,158,11,0.25)] font-semibold",
     },
     complete: {
       icon: CheckCircle2,
-      className: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
+      className: "bg-emerald-500/20 text-emerald-300 border-emerald-500/40 shadow-[0_0_10px_rgba(16,185,129,0.15)] font-semibold",
     },
   };
 
@@ -40,14 +40,20 @@ export function StatusBadge({
 
   const sizeClasses =
     size === "sm"
-      ? "text-xs px-2 py-0.5 gap-1.5"
-      : "text-xs font-medium px-2.5 py-1 gap-1.5";
+      ? "text-xs px-2.5 py-0.5 gap-1.5"
+      : "text-xs font-semibold px-3 py-1 gap-1.5";
   const iconSize = size === "sm" ? "h-3 w-3" : "h-3.5 w-3.5";
 
   return (
     <span
       className={`inline-flex items-center rounded-full border ${current.className} ${sizeClasses} ${className}`}
     >
+      {status === "in_progress" && (
+        <span className="relative flex h-1.5 w-1.5 mr-0.5 shrink-0" aria-hidden="true">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-400" />
+        </span>
+      )}
       <Icon className={`${iconSize} shrink-0`} aria-hidden="true" />
       <span>{label}</span>
     </span>

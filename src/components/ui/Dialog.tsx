@@ -129,17 +129,17 @@ export function Dialog({
         aria-labelledby={titleId}
         aria-describedby={descId}
         tabIndex={-1}
-        className="w-full sm:max-w-lg glass-strong border border-white/15 p-6 sm:p-8 rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto focus:outline-none flex flex-col pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))]"
+        className="w-full sm:max-w-lg glass-strong border border-amber-500/25 p-6 sm:p-8 rounded-t-3xl sm:rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto focus:outline-none flex flex-col pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))]"
       >
         {/* Mobile bottom sheet drag handle visual */}
         <div
-          className="sm:hidden w-12 h-1.5 bg-white/20 rounded-full mx-auto mb-4 shrink-0"
+          className="sm:hidden w-12 h-1.5 bg-amber-400/30 rounded-full mx-auto mb-4 shrink-0"
           aria-hidden="true"
         />
 
         <div className="flex items-start justify-between gap-4 mb-4">
           <div>
-            <h2 id={titleId} className="text-xl font-semibold text-slate-50">
+            <h2 id={titleId} className="text-xl font-bold text-slate-50">
               {title}
             </h2>
             {description && (
@@ -152,7 +152,7 @@ export function Dialog({
             type="button"
             onClick={onClose}
             aria-label="Close dialog"
-            className="p-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400"
+            className="p-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-amber-300 hover:bg-amber-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
           >
             <X className="h-5 w-5" aria-hidden="true" />
           </button>

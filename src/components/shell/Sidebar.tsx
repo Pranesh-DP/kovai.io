@@ -39,13 +39,13 @@ export function Sidebar({ user }: SidebarProps) {
         {/* Brand / Logo */}
         <Link
           href="/dashboard"
-          className="flex items-center gap-3 px-2 py-1.5 rounded-xl text-slate-100 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400"
+          className="flex items-center gap-3 px-2 py-1.5 rounded-xl text-slate-100 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 transition-colors"
           aria-label="Clearpane Home"
         >
-          <div className="h-9 w-9 rounded-xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center shrink-0 text-indigo-400">
-            <Layers className="h-5 w-5" aria-hidden="true" />
+          <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-yellow-600 text-slate-950 border border-amber-300/40 flex items-center justify-center shrink-0 shadow-md shadow-amber-500/25">
+            <Layers className="h-5 w-5 stroke-[2.5]" aria-hidden="true" />
           </div>
-          <span className="hidden lg:inline text-lg font-semibold tracking-tight">
+          <span className="hidden lg:inline text-lg font-bold tracking-tight bg-gradient-to-r from-slate-50 via-amber-100 to-amber-300 bg-clip-text text-transparent">
             Clearpane
           </span>
         </Link>
@@ -64,13 +64,13 @@ export function Sidebar({ user }: SidebarProps) {
                 aria-current={isActive ? "page" : undefined}
                 title={item.name}
                 aria-label={item.name}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400 ${
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 ${
                   isActive
-                    ? "bg-indigo-500/15 text-indigo-200 font-medium border border-indigo-500/30 shadow-sm shadow-indigo-500/10"
-                    : "text-slate-300 hover:text-slate-100 hover:bg-white/5 border border-transparent"
+                    ? "bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-transparent text-amber-300 font-semibold border-l-2 border-l-amber-400 border-amber-500/20 shadow-sm shadow-amber-500/10"
+                    : "text-slate-300 hover:text-amber-200 hover:bg-amber-500/[0.08] border border-transparent"
                 }`}
               >
-                <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
+                <Icon className={`h-5 w-5 shrink-0 ${isActive ? "text-amber-400" : ""}`} aria-hidden="true" />
                 <span className="hidden lg:inline">{item.name}</span>
               </Link>
             );

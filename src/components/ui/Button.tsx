@@ -22,16 +22,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 disabled:opacity-50 disabled:cursor-not-allowed select-none";
+      "inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 disabled:opacity-50 disabled:cursor-not-allowed select-none";
 
     const variantStyles = {
       primary:
-        "bg-indigo-500 hover:bg-indigo-600 text-white shadow-md shadow-indigo-500/20 border border-indigo-400/30",
+        "bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:via-yellow-400 hover:to-amber-500 text-slate-950 font-semibold shadow-lg shadow-amber-500/20 border border-amber-300/40 active:scale-[0.98]",
       secondary:
-        "bg-white/10 hover:bg-white/15 text-slate-100 border border-white/15",
-      ghost: "bg-transparent hover:bg-white/10 text-slate-300 hover:text-white",
+        "bg-white/[0.06] hover:bg-white/[0.12] text-amber-100/90 border border-amber-500/20 hover:border-amber-400/40 shadow-sm active:scale-[0.98]",
+      ghost: "bg-transparent hover:bg-amber-500/10 text-slate-300 hover:text-amber-200",
       danger:
-        "bg-red-500/20 hover:bg-red-500/30 text-red-200 border border-red-500/30",
+        "bg-red-500/15 hover:bg-red-500/25 text-red-300 border border-red-500/30",
     };
 
     const sizeStyles = {

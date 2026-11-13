@@ -16,7 +16,7 @@ export default function GlobalError({
 
   return (
     <html lang="en" className="dark h-full">
-      <body className="min-h-full bg-[#0B1020] text-slate-50 flex items-center justify-center p-4">
+      <body className="min-h-full bg-[#060709] text-slate-50 flex items-center justify-center p-4">
         <div className="w-full max-w-md p-8 sm:p-10 rounded-3xl glass-strong border border-red-500/30 text-center shadow-2xl flex flex-col items-center">
           <div className="h-16 w-16 rounded-2xl bg-red-500/15 border border-red-500/30 flex items-center justify-center text-red-400 mb-6 shadow-inner shadow-red-500/20">
             <AlertCircle className="h-8 w-8" aria-hidden="true" />
@@ -33,7 +33,7 @@ export default function GlobalError({
           <button
             type="button"
             onClick={() => reset()}
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-md shadow-indigo-500/20 border border-indigo-400/30 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-300 hover:to-yellow-300 text-slate-950 shadow-md shadow-amber-500/20 border border-amber-300/40 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
           >
             <RefreshCw className="h-4 w-4" aria-hidden="true" />
             <span>Try again</span>

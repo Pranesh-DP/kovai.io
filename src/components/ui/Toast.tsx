@@ -76,7 +76,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
             ),
             info: (
               <Info
-                className="h-4 w-4 text-indigo-400 shrink-0 mt-0.5"
+                className="h-4 w-4 text-amber-400 shrink-0 mt-0.5"
                 aria-hidden="true"
               />
             ),
@@ -85,7 +85,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
           const typeStyles = {
             success: "border-emerald-500/30",
             error: "border-red-500/30",
-            info: "border-white/15",
+            info: "border-amber-500/25",
           };
 
           const toastType = toast.type ?? "info";
@@ -110,7 +110,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
                     toast.action?.onClick();
                     dismissToast(toast.id);
                   }}
-                  className="font-semibold text-indigo-400 hover:text-indigo-300 underline underline-offset-2 shrink-0 text-xs px-2 py-1 min-h-[44px] flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400 rounded"
+                  className="font-semibold text-amber-400 hover:text-amber-300 underline underline-offset-2 shrink-0 text-xs px-2 py-1 min-h-[44px] flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 rounded"
                 >
                   {toast.action.label}
                 </button>
@@ -119,7 +119,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
                 type="button"
                 onClick={() => dismissToast(toast.id)}
                 aria-label="Dismiss notification"
-                className="text-slate-400 hover:text-slate-200 shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-400"
+                className="text-slate-400 hover:text-amber-300 shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
               >
                 <X className="h-4 w-4" aria-hidden="true" />
               </button>

@@ -68,16 +68,16 @@ export function DashboardGrid({ initialTasks, userName }: DashboardGridProps) {
     <div className="flex-1 flex flex-col gap-6 w-full">
       {/* Zero-task friendly welcome hero banner */}
       {tasks.length === 0 && (
-        <div className="p-8 sm:p-12 rounded-3xl glass border border-indigo-500/20 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6 bg-gradient-to-r from-indigo-500/10 via-transparent to-transparent">
+        <div className="p-8 sm:p-12 rounded-3xl glass border border-amber-500/25 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6 bg-gradient-to-r from-amber-500/10 via-transparent to-transparent">
           <div className="flex items-center gap-5 text-center sm:text-left flex-col sm:flex-row">
-            <div className="h-16 w-16 rounded-2xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center text-indigo-400 shrink-0 shadow-inner shadow-indigo-500/20">
-              <ClipboardList className="h-8 w-8" aria-hidden="true" />
+            <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-yellow-600 text-slate-950 border border-amber-300/40 flex items-center justify-center shrink-0 shadow-lg shadow-amber-500/25">
+              <ClipboardList className="h-8 w-8 stroke-[2.5]" aria-hidden="true" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-slate-100">
                 Welcome to Clearpane
               </h3>
-              <p className="text-sm text-slate-400 max-w-md mt-1 leading-relaxed">
+              <p className="text-sm text-slate-300 max-w-md mt-1 leading-relaxed">
                 Your workspace is empty and clear. Create your first task to
                 start organizing your priorities calmly and deliberately.
               </p>
@@ -86,7 +86,7 @@ export function DashboardGrid({ initialTasks, userName }: DashboardGridProps) {
           <Button
             size="lg"
             onClick={() => openCreateTask()}
-            className="gap-2 shrink-0 shadow-lg shadow-indigo-500/25"
+            className="gap-2 shrink-0 font-semibold shadow-lg shadow-amber-500/25"
           >
             <Plus className="h-4 w-4" aria-hidden="true" />
             <span>Create your first task</span>

@@ -2,8 +2,9 @@
 
 @theme inline {
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --color-brand-bg: #0B1020;
-  --color-brand-indigo: #6366F1;
+  --color-brand-bg: #060709;
+  --color-brand-gold: #F59E0B;
+  --color-brand-amber: #FBBF24;
 }
 
 :root {
@@ -11,98 +12,157 @@
 }
 
 body {
-  background-color: #0B1020;
-  color: #F8FAFC; /* slate-50 */
+  background-color: #060709;
+  color: #F8FAFC;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Background glows */
+/* Luxury Geometric Background Grid & Glows */
 .bg-glows {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(245, 158, 11, 0.08) 1px, transparent 0),
+    linear-gradient(to bottom, rgba(6, 7, 9, 0.85) 0%, rgba(6, 7, 9, 0.95) 100%);
+  background-size: 32px 32px, 100% 100%;
 }
 
 .bg-glows::before {
   content: "";
   position: absolute;
-  top: -10%;
-  left: 20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, rgba(99, 102, 241, 0) 70%);
-  filter: blur(60px);
+  top: -15%;
+  left: 15%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.16) 0%, rgba(217, 119, 6, 0.06) 45%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(80px);
   border-radius: 50%;
+  animation: floatGlow 14s ease-in-out infinite alternate;
 }
 
 .bg-glows::after {
   content: "";
   position: absolute;
-  bottom: 0%;
-  right: 15%;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(79, 70, 229, 0.13) 0%, rgba(79, 70, 229, 0) 70%);
-  filter: blur(80px);
+  bottom: -10%;
+  right: 10%;
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.12) 0%, rgba(180, 83, 9, 0.05) 50%, rgba(0, 0, 0, 0) 75%);
+  filter: blur(90px);
   border-radius: 50%;
+  animation: floatGlowRev 18s ease-in-out infinite alternate;
 }
 
-/* Glass surface standard */
+@keyframes floatGlow {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 30px) scale(1.08); }
+  100% { transform: translate(-20px, 50px) scale(0.96); }
+}
+
+@keyframes floatGlowRev {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, -30px) scale(1.06); }
+  100% { transform: translate(30px, -40px) scale(0.95); }
+}
+
+/* Shimmer animation for gold CTA highlights */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.animate-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: shimmer 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Glass surface standard - Deep Obsidian with Gold Sheen */
 .glass {
-  background: rgba(255, 255, 255, 0.06);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(14, 16, 22, 0.72);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.14);
   border-radius: 20px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass:hover {
+  border-color: rgba(245, 158, 11, 0.26);
 }
 
 /* Fallback for browsers without backdrop-filter support */
 @supports not ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
   .glass {
-    background: #0f172a;
-    border-color: rgba(255, 255, 255, 0.15);
+    background: #0d0f15;
+    border-color: rgba(245, 158, 11, 0.18);
   }
 }
 
 /* Fallback for prefers-reduced-transparency */
 @media (prefers-reduced-transparency: reduce) {
   .glass {
-    background: #0f172a !important;
+    background: #0d0f15 !important;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
-    border-color: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(245, 158, 11, 0.25) !important;
   }
 }
 
 /* Glass surface strong (modals, dialogs, drawers) */
 .glass-strong {
-  background: rgba(15, 23, 42, 0.88);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 20px;
-  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.55);
+  background: rgba(10, 12, 18, 0.94);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(245, 158, 11, 0.24);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.75), inset 0 1px 0 0 rgba(251, 191, 36, 0.15);
 }
 
 @supports not ((-webkit-backdrop-filter: blur(16px)) or (backdrop-filter: blur(16px))) {
   .glass-strong {
-    background: #0b1020;
-    border-color: rgba(255, 255, 255, 0.2);
+    background: #08090d;
+    border-color: rgba(245, 158, 11, 0.25);
   }
 }
 
 @media (prefers-reduced-transparency: reduce) {
   .glass-strong {
-    background: #0b1020 !important;
+    background: #08090d !important;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
-    border-color: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(245, 158, 11, 0.3) !important;
   }
+}
+
+/* Golden card hover glow */
+.gold-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gold-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: 0 12px 36px -6px rgba(245, 158, 11, 0.15), 0 0 0 1px rgba(245, 158, 11, 0.1);
 }
 
 /* Global prefers-reduced-motion */
