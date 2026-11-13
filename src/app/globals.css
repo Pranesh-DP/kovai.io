@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-brand-bg: #0B1020;
+  --color-brand-indigo: #6366F1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0B1020;
+  color: #F8FAFC; /* slate-50 */
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background glows */
+.bg-glows {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-glows::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, rgba(99, 102, 241, 0) 70%);
+  filter: blur(60px);
+  border-radius: 50%;
+}
+
+.bg-glows::after {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  right: 15%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.13) 0%, rgba(79, 70, 229, 0) 70%);
+  filter: blur(80px);
+  border-radius: 50%;
+}
+
+/* Glass surface standard */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+  .glass {
+    background: #0f172a;
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Fallback for prefers-reduced-transparency */
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    background: #0f172a !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+}
+
+/* Glass surface strong (modals, dialogs, drawers) */
+.glass-strong {
+  background: rgba(15, 23, 42, 0.88);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.55);
+}
+
+@supports not ((-webkit-backdrop-filter: blur(16px)) or (backdrop-filter: blur(16px))) {
+  .glass-strong {
+    background: #0b1020;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass-strong {
+    background: #0b1020 !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+  }
+}
+
+/* Global prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
