@@ -2,9 +2,9 @@
 
 @theme inline {
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --color-brand-bg: #060709;
-  --color-brand-gold: #F59E0B;
-  --color-brand-amber: #FBBF24;
+  --color-brand-bg: #060B08;
+  --color-brand-emerald: #10B981;
+  --color-brand-mint: #34D399;
 }
 
 :root {
@@ -12,14 +12,14 @@
 }
 
 body {
-  background-color: #060709;
-  color: #F8FAFC;
+  background-color: #060B08;
+  color: #FFFFFF;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Luxury Geometric Background Grid & Glows */
+/* Emerald + White Geometric Background Grid & Glows */
 .bg-glows {
   position: fixed;
   inset: 0;
@@ -27,8 +27,8 @@ body {
   z-index: 0;
   overflow: hidden;
   background-image: 
-    radial-gradient(circle at 1px 1px, rgba(245, 158, 11, 0.08) 1px, transparent 0),
-    linear-gradient(to bottom, rgba(6, 7, 9, 0.85) 0%, rgba(6, 7, 9, 0.95) 100%);
+    radial-gradient(circle at 1px 1px, rgba(16, 185, 129, 0.09) 1px, transparent 0),
+    linear-gradient(to bottom, rgba(6, 11, 8, 0.88) 0%, rgba(6, 11, 8, 0.98) 100%);
   background-size: 32px 32px, 100% 100%;
 }
 
@@ -39,7 +39,7 @@ body {
   left: 15%;
   width: 650px;
   height: 650px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.16) 0%, rgba(217, 119, 6, 0.06) 45%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, rgba(5, 150, 105, 0.06) 45%, rgba(0, 0, 0, 0) 70%);
   filter: blur(80px);
   border-radius: 50%;
   animation: floatGlow 14s ease-in-out infinite alternate;
@@ -52,7 +52,7 @@ body {
   right: 10%;
   width: 750px;
   height: 750px;
-  background: radial-gradient(circle, rgba(234, 179, 8, 0.12) 0%, rgba(180, 83, 9, 0.05) 50%, rgba(0, 0, 0, 0) 75%);
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.13) 0%, rgba(4, 120, 87, 0.05) 50%, rgba(0, 0, 0, 0) 75%);
   filter: blur(90px);
   border-radius: 50%;
   animation: floatGlowRev 18s ease-in-out infinite alternate;
@@ -70,7 +70,7 @@ body {
   100% { transform: translate(30px, -40px) scale(0.95); }
 }
 
-/* Shimmer animation for gold CTA highlights */
+/* Shimmer animation for Emerald CTA highlights */
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(200%); }
@@ -90,79 +90,89 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.35),
     transparent
   );
   transform: translateX(-100%);
   animation: shimmer 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-/* Glass surface standard - Deep Obsidian with Gold Sheen */
+/* Glass surface standard - Deep Obsidian with Emerald & White Sheen */
 .glass {
-  background: rgba(14, 16, 22, 0.72);
+  background: rgba(10, 18, 14, 0.72);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.16);
   border-radius: 20px;
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
 }
 
 .glass:hover {
-  border-color: rgba(245, 158, 11, 0.26);
+  border-color: rgba(16, 185, 129, 0.28);
 }
 
 /* Fallback for browsers without backdrop-filter support */
 @supports not ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
   .glass {
-    background: #0d0f15;
-    border-color: rgba(245, 158, 11, 0.18);
+    background: #09120e;
+    border-color: rgba(16, 185, 129, 0.18);
   }
 }
 
 /* Fallback for prefers-reduced-transparency */
 @media (prefers-reduced-transparency: reduce) {
   .glass {
-    background: #0d0f15 !important;
+    background: #09120e !important;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
-    border-color: rgba(245, 158, 11, 0.25) !important;
+    border-color: rgba(16, 185, 129, 0.25) !important;
   }
 }
 
 /* Glass surface strong (modals, dialogs, drawers) */
 .glass-strong {
-  background: rgba(10, 12, 18, 0.94);
+  background: rgba(8, 15, 11, 0.94);
   -webkit-backdrop-filter: blur(24px);
   backdrop-filter: blur(24px);
-  border: 1px solid rgba(245, 158, 11, 0.24);
+  border: 1px solid rgba(16, 185, 129, 0.26);
   border-radius: 24px;
-  box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.75), inset 0 1px 0 0 rgba(251, 191, 36, 0.15);
+  box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.75), inset 0 1px 0 0 rgba(52, 211, 153, 0.18);
 }
 
 @supports not ((-webkit-backdrop-filter: blur(16px)) or (backdrop-filter: blur(16px))) {
   .glass-strong {
-    background: #08090d;
-    border-color: rgba(245, 158, 11, 0.25);
+    background: #060c09;
+    border-color: rgba(16, 185, 129, 0.25);
   }
 }
 
 @media (prefers-reduced-transparency: reduce) {
   .glass-strong {
-    background: #08090d !important;
+    background: #060c09 !important;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
-    border-color: rgba(245, 158, 11, 0.3) !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
   }
 }
 
-/* Golden card hover glow */
+/* Emerald card hover glow */
+.emerald-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.emerald-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 12px 36px -6px rgba(16, 185, 129, 0.2), 0 0 0 1px rgba(16, 185, 129, 0.15);
+}
+
+/* Backward compatibility alias for gold-card-hover */
 .gold-card-hover {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .gold-card-hover:hover {
   transform: translateY(-2px);
-  border-color: rgba(245, 158, 11, 0.35);
-  box-shadow: 0 12px 36px -6px rgba(245, 158, 11, 0.15), 0 0 0 1px rgba(245, 158, 11, 0.1);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 12px 36px -6px rgba(16, 185, 129, 0.2), 0 0 0 1px rgba(16, 185, 129, 0.15);
 }
 
 /* Global prefers-reduced-motion */

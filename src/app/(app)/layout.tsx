@@ -45,7 +45,7 @@ export default async function AppLayout({
       {/* Skip navigation link — visible on focus only */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-500 focus:text-slate-950 focus:font-semibold focus:rounded-xl focus:outline-none focus:outline-2 focus:outline-amber-400"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-emerald-400 focus:text-slate-950 focus:font-bold focus:rounded-xl focus:outline-none focus:outline-2 focus:outline-emerald-400"
       >
         Skip to content
       </a>

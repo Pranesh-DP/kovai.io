@@ -17,12 +17,12 @@ export function AppHeader() {
   }, [pathname]);
 
   return (
-    <header className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 mb-6 rounded-2xl glass border border-amber-500/20 shadow-lg">
+    <header className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 mb-6 rounded-2xl glass border border-emerald-500/20 shadow-lg">
       <div className="flex items-center gap-3">
-        <h1 className="text-xl sm:text-2xl font-bold text-slate-50 tracking-tight flex items-center gap-2.5">
+        <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2.5">
           <span>{title}</span>
-          <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/25 px-2 py-0.5 rounded-full uppercase">
-            ✦ PRO
+          <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2 py-0.5 rounded-full uppercase">
+            WORKSPACE
           </span>
         </h1>
       </div>
@@ -34,11 +34,11 @@ export function AppHeader() {
           onClick={() => openCreateTask()}
           aria-label="New task (press N)"
           title="New task (Press N)"
-          className="gap-2 font-semibold shadow-md shadow-amber-500/20"
+          className="gap-2 font-bold shadow-md shadow-emerald-500/25"
         >
           <Plus className="h-4 w-4" aria-hidden="true" />
           <span>New task</span>
-          <kbd className="hidden lg:inline-block text-[10px] font-mono bg-slate-950/40 text-slate-950 px-1.5 py-0.5 rounded border border-amber-900/40 font-bold">
+          <kbd className="hidden lg:inline-block text-[10px] font-mono bg-slate-950/40 text-slate-950 px-1.5 py-0.5 rounded border border-emerald-900/40 font-bold">
             N
           </kbd>
         </Button>

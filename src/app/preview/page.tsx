@@ -20,8 +20,8 @@ const INITIAL_TASKS: Task[] = [
   {
     id: "task-1",
     user_id: "demo-user",
-    title: "⚡ Finalize Obsidian & Gold Design System",
-    notes: "Calibrate metallic gold borders, pulse indicators, and responsive bento grid.",
+    title: "⚡ Finalize Obsidian & Emerald Design System",
+    notes: "Calibrate electric emerald borders, pulse indicators, and responsive bento grid.",
     status: "in_progress",
     created_at: new Date(Date.now() - 1000 * 60 * 45).toISOString(),
     updated_at: new Date().toISOString(),
@@ -101,14 +101,14 @@ export default function PreviewPage() {
     <TaskDialogProvider>
       <div className="min-h-screen flex flex-col relative z-10">
         {/* Preview Mode Sticky Top Banner */}
-        <div className="sticky top-0 z-50 bg-gradient-to-r from-amber-500/20 via-yellow-500/25 to-amber-500/20 backdrop-blur-lg border-b border-amber-500/30 px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 shadow-lg">
+        <div className="sticky top-0 z-50 bg-gradient-to-r from-emerald-500/20 via-teal-500/25 to-emerald-500/20 backdrop-blur-lg border-b border-emerald-500/30 px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 shadow-lg">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400" />
             </span>
-            <span className="text-xs font-bold text-amber-200 tracking-wide uppercase flex items-center gap-1.5">
-              <Eye className="h-4 w-4 text-amber-400" />
+            <span className="text-xs font-bold text-emerald-200 tracking-wide uppercase flex items-center gap-1.5">
+              <Eye className="h-4 w-4 text-emerald-400" />
               Live Interactive Preview Mode (No Login Required)
             </span>
           </div>
@@ -131,14 +131,14 @@ export default function PreviewPage() {
             </button>
 
             {/* Toggle between Dashboard & Tasks views */}
-            <div className="flex items-center bg-slate-950/80 p-1 rounded-xl border border-amber-500/30 gap-1">
+            <div className="flex items-center bg-slate-950/80 p-1 rounded-xl border border-emerald-500/30 gap-1">
               <button
                 type="button"
                 onClick={() => setActiveView("dashboard")}
                 className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold transition-all ${
                   activeView === "dashboard"
-                    ? "bg-amber-400 text-slate-950 shadow-sm"
-                    : "text-slate-300 hover:text-amber-200"
+                    ? "bg-emerald-400 text-slate-950 shadow-sm"
+                    : "text-slate-300 hover:text-emerald-200"
                 }`}
               >
                 <LayoutDashboard className="h-3.5 w-3.5" />
@@ -149,8 +149,8 @@ export default function PreviewPage() {
                 onClick={() => setActiveView("tasks")}
                 className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold transition-all ${
                   activeView === "tasks"
-                    ? "bg-amber-400 text-slate-950 shadow-sm"
-                    : "text-slate-300 hover:text-amber-200"
+                    ? "bg-emerald-400 text-slate-950 shadow-sm"
+                    : "text-slate-300 hover:text-emerald-200"
                 }`}
               >
                 <CheckSquare className="h-3.5 w-3.5" />

@@ -22,14 +22,14 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 disabled:opacity-50 disabled:cursor-not-allowed select-none";
+      "inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 disabled:opacity-50 disabled:cursor-not-allowed select-none";
 
     const variantStyles = {
       primary:
-        "bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 hover:from-amber-400 hover:via-yellow-400 hover:to-amber-500 text-slate-950 font-semibold shadow-lg shadow-amber-500/20 border border-amber-300/40 active:scale-[0.98]",
+        "bg-gradient-to-r from-emerald-500 via-emerald-400 to-teal-400 hover:from-emerald-400 hover:via-emerald-300 hover:to-teal-300 text-slate-950 font-bold shadow-lg shadow-emerald-500/25 border border-emerald-200/50 active:scale-[0.98]",
       secondary:
-        "bg-white/[0.06] hover:bg-white/[0.12] text-amber-100/90 border border-amber-500/20 hover:border-amber-400/40 shadow-sm active:scale-[0.98]",
-      ghost: "bg-transparent hover:bg-amber-500/10 text-slate-300 hover:text-amber-200",
+        "bg-white/[0.08] hover:bg-white/[0.15] text-white border border-emerald-500/25 hover:border-emerald-400/50 shadow-sm active:scale-[0.98]",
+      ghost: "bg-transparent hover:bg-emerald-500/10 text-slate-300 hover:text-white",
       danger:
         "bg-red-500/15 hover:bg-red-500/25 text-red-300 border border-red-500/30",
     };

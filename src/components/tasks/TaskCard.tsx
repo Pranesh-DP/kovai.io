@@ -116,15 +116,15 @@ export function TaskCard({
   const isInProgress = task.status === "in_progress";
 
   const cardStatusStyle = isInProgress
-    ? "border-l-4 border-l-amber-400 border-amber-500/35 bg-gradient-to-r from-amber-500/[0.12] via-slate-950/70 to-slate-950/70 shadow-[0_0_24px_rgba(245,158,11,0.12)]"
+    ? "border-l-4 border-l-emerald-400 border-emerald-500/35 bg-gradient-to-r from-emerald-500/[0.12] via-slate-950/70 to-slate-950/70 shadow-[0_0_24px_rgba(16,185,129,0.18)]"
     : isComplete
-      ? "border-l-4 border-l-emerald-500/60 border-emerald-500/20 bg-gradient-to-r from-emerald-500/[0.04] via-slate-950/60 to-slate-950/60 opacity-90"
-      : "border-l-4 border-l-zinc-700 border-amber-500/15 bg-slate-950/60";
+      ? "border-l-4 border-l-white/60 border-emerald-500/20 bg-gradient-to-r from-white/[0.04] via-slate-950/60 to-slate-950/60 opacity-90"
+      : "border-l-4 border-l-zinc-700 border-emerald-500/15 bg-slate-950/60";
 
   return (
     <article
       aria-busy={isPending}
-      className={`relative p-5 sm:p-6 rounded-2xl glass gold-card-hover ${cardStatusStyle} transition-all flex flex-col gap-4 ${
+      className={`relative p-5 sm:p-6 rounded-2xl glass emerald-card-hover ${cardStatusStyle} transition-all flex flex-col gap-4 ${
         isPending ? "opacity-60 pointer-events-none" : ""
       }`}
     >
@@ -133,12 +133,12 @@ export function TaskCard({
         <div className="flex items-center gap-2.5 flex-wrap">
           <StatusBadge status={task.status} size="sm" />
           {isInProgress && (
-            <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono font-bold tracking-wider text-amber-300 bg-amber-500/20 border border-amber-400/40 px-2 py-0.5 rounded-full uppercase shadow-[0_0_10px_rgba(245,158,11,0.2)]">
+            <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono font-bold tracking-wider text-emerald-300 bg-emerald-500/20 border border-emerald-400/40 px-2 py-0.5 rounded-full uppercase shadow-[0_0_10px_rgba(16,185,129,0.2)]">
               ⚡ IN FOCUS
             </span>
           )}
           {isComplete && (
-            <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono font-bold tracking-wider text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 rounded-full uppercase">
+            <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono font-bold tracking-wider text-white bg-white/10 border border-white/20 px-2 py-0.5 rounded-full uppercase">
               ✓ DONE
             </span>
           )}
@@ -161,7 +161,7 @@ export function TaskCard({
             aria-label={`Options for task: ${task.title}`}
             aria-expanded={menuOpen}
             aria-haspopup="menu"
-            className="p-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-amber-300 hover:bg-amber-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+            className="p-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-emerald-300 hover:bg-emerald-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400"
           >
             <MoreVertical className="h-4 w-4" aria-hidden="true" />
           </button>
@@ -171,7 +171,7 @@ export function TaskCard({
               ref={menuRef}
               role="menu"
               aria-label="Task options"
-              className="absolute right-0 top-full mt-1.5 w-40 glass-strong border border-amber-500/25 rounded-xl p-1 shadow-2xl z-20 flex flex-col gap-0.5"
+              className="absolute right-0 top-full mt-1.5 w-40 glass-strong border border-emerald-500/25 rounded-xl p-1 shadow-2xl z-20 flex flex-col gap-0.5"
             >
               <button
                 type="button"
@@ -180,7 +180,7 @@ export function TaskCard({
                   setMenuOpen(false);
                   onEdit(task);
                 }}
-                className="flex items-center gap-2.5 px-3 py-2.5 min-h-[44px] text-xs text-slate-200 hover:text-amber-200 hover:bg-amber-500/10 rounded-lg w-full text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+                className="flex items-center gap-2.5 px-3 py-2.5 min-h-[44px] text-xs text-slate-200 hover:text-emerald-200 hover:bg-emerald-500/10 rounded-lg w-full text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400"
               >
                 <Pencil className="h-4 w-4" aria-hidden="true" />
                 <span>Edit</span>
@@ -192,7 +192,7 @@ export function TaskCard({
                   setMenuOpen(false);
                   onDelete(task);
                 }}
-                className="flex items-center gap-2.5 px-3 py-2.5 min-h-[44px] text-xs text-red-300 hover:text-red-200 hover:bg-red-500/15 rounded-lg w-full text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+                className="flex items-center gap-2.5 px-3 py-2.5 min-h-[44px] text-xs text-red-300 hover:text-red-200 hover:bg-red-500/15 rounded-lg w-full text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400"
               >
                 <Trash2 className="h-4 w-4" aria-hidden="true" />
                 <span>Delete</span>
@@ -209,8 +209,8 @@ export function TaskCard({
             isComplete
               ? "line-through text-slate-400 decoration-emerald-500/50"
               : isInProgress
-                ? "font-bold text-amber-200"
-                : "font-semibold text-slate-100 group-hover:text-amber-200/90"
+                ? "font-bold text-emerald-300"
+                : "font-semibold text-slate-100 group-hover:text-emerald-200/90"
           }`}
           title={task.title}
         >
@@ -233,7 +233,7 @@ export function TaskCard({
         ref={radioGroupRef}
         role="radiogroup"
         aria-label={`Change status for ${task.title}`}
-        className="flex items-center p-1 rounded-xl bg-slate-950/70 border border-amber-500/15 gap-1 mt-1 shadow-inner"
+        className="flex items-center p-1 rounded-xl bg-slate-950/70 border border-emerald-500/15 gap-1 mt-1 shadow-inner"
       >
         {STATUS_OPTIONS.map((option, idx) => {
           const isSelected = task.status === option.status;
@@ -253,13 +253,13 @@ export function TaskCard({
                 }
               }}
               onKeyDown={(e) => handleRadioKeyDown(e, idx)}
-              className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-semibold transition-all select-none min-h-[36px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 ${
+              className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-semibold transition-all select-none min-h-[36px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 ${
                 isSelected
                   ? option.status === "in_progress"
-                    ? "bg-amber-500/20 text-amber-300 border border-amber-400/40 shadow-sm"
+                    ? "bg-emerald-500/25 text-emerald-300 border border-emerald-400/50 shadow-sm"
                     : option.status === "complete"
-                      ? "bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 shadow-sm"
-                      : "bg-white/15 text-white shadow-sm border border-white/20"
+                      ? "bg-white/15 text-white border border-white/30 shadow-sm"
+                      : "bg-white/10 text-white shadow-sm border border-white/20"
                   : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
               }`}
             >
@@ -267,9 +267,9 @@ export function TaskCard({
                 className={`h-3.5 w-3.5 shrink-0 ${
                   isSelected
                     ? option.status === "complete"
-                      ? "text-emerald-400"
+                      ? "text-white"
                       : option.status === "in_progress"
-                        ? "text-amber-400"
+                        ? "text-emerald-400"
                         : "text-slate-200"
                     : "text-slate-500"
                 }`}

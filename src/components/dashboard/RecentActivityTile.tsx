@@ -19,15 +19,15 @@ export function RecentActivityTile({ recentTasks }: RecentActivityTileProps) {
   );
 
   return (
-    <div className="glass gold-card-hover border border-amber-500/20 p-6 sm:p-8 rounded-3xl flex flex-col justify-between shadow-xl gap-4">
+    <div className="glass emerald-card-hover border border-emerald-500/20 p-6 sm:p-8 rounded-3xl flex flex-col justify-between shadow-xl gap-4">
       <div className="flex items-center justify-between text-xs font-semibold text-slate-300">
-        <div className="flex items-center gap-1.5 text-amber-400">
+        <div className="flex items-center gap-1.5 text-emerald-400">
           <History className="h-4 w-4" aria-hidden="true" />
-          <h3 className="font-bold text-slate-100 tracking-wide uppercase">Recent Activity</h3>
+          <h3 className="font-bold text-white tracking-wide uppercase">Recent Activity</h3>
         </div>
         <Link
           href="/tasks"
-          className="text-xs text-amber-400 hover:text-amber-300 hover:underline flex items-center gap-1 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 rounded"
+          className="text-xs text-emerald-400 hover:text-emerald-300 hover:underline flex items-center gap-1 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 rounded"
         >
           <span>All tasks</span>
           <ArrowRight className="h-3 w-3" aria-hidden="true" />
@@ -35,7 +35,7 @@ export function RecentActivityTile({ recentTasks }: RecentActivityTileProps) {
       </div>
 
       {recentTasks.length === 0 ? (
-        <div className="flex-1 flex flex-col items-center justify-center p-6 text-center rounded-2xl bg-amber-500/[0.03] border border-amber-500/10 my-2">
+        <div className="flex-1 flex flex-col items-center justify-center p-6 text-center rounded-2xl bg-emerald-500/[0.03] border border-emerald-500/10 my-2">
           <p className="text-sm text-slate-200 font-semibold mb-1">
             No recent activity
           </p>
@@ -67,11 +67,11 @@ export function RecentActivityTile({ recentTasks }: RecentActivityTileProps) {
             return (
               <div
                 key={task.id}
-                className="flex items-center justify-between gap-3 p-3 rounded-2xl bg-slate-950/50 border border-amber-500/15 hover:border-amber-400/35 transition-all shadow-sm"
+                className="flex items-center justify-between gap-3 p-3 rounded-2xl bg-slate-950/50 border border-emerald-500/20 hover:border-emerald-400/40 transition-all shadow-sm"
               >
                 <div className="min-w-0 flex-1 overflow-hidden">
                   <h4
-                    className="text-sm font-semibold text-slate-100 truncate break-words"
+                    className="text-sm font-semibold text-white truncate break-words"
                     title={task.title}
                   >
                     {task.title}

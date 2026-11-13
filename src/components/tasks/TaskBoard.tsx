@@ -270,13 +270,13 @@ export function TaskBoard({
             onClick={() => setActiveTab("all")}
             className={`p-4 sm:p-5 rounded-2xl glass transition-all text-left flex flex-col justify-between border ${
               activeTab === "all"
-                ? "border-amber-400/50 bg-amber-500/10 shadow-[0_0_20px_rgba(245,158,11,0.15)] ring-1 ring-amber-400/30"
-                : "border-amber-500/15 hover:border-amber-500/30 bg-slate-950/50"
+                ? "border-emerald-400/50 bg-emerald-500/10 shadow-[0_0_20px_rgba(16,185,129,0.15)] ring-1 ring-emerald-400/30"
+                : "border-emerald-500/15 hover:border-emerald-500/30 bg-slate-950/50"
             }`}
           >
             <div className="flex items-center justify-between text-xs text-slate-400">
               <span className="font-semibold uppercase tracking-wider text-slate-300">Total</span>
-              <Layers className="h-4 w-4 text-amber-400" aria-hidden="true" />
+              <Layers className="h-4 w-4 text-emerald-400" aria-hidden="true" />
             </div>
             <div className="mt-2 flex items-baseline gap-2">
               <span className="text-2xl sm:text-3xl font-extrabold text-slate-50">{stats.total}</span>
@@ -304,49 +304,49 @@ export function TaskBoard({
             </div>
           </button>
 
-          {/* Card 3: In Progress (Pulsing Gold) */}
+          {/* Card 3: In Progress (Radiant Emerald) */}
           <button
             type="button"
             onClick={() => setActiveTab("in_progress")}
             className={`p-4 sm:p-5 rounded-2xl glass transition-all text-left flex flex-col justify-between border ${
               activeTab === "in_progress"
-                ? "border-amber-400 bg-amber-500/20 shadow-[0_0_24px_rgba(245,158,11,0.25)] ring-1 ring-amber-400/50"
-                : "border-amber-500/30 hover:border-amber-400/50 bg-gradient-to-br from-amber-500/[0.08] to-slate-950/60 shadow-sm"
+                ? "border-emerald-400 bg-emerald-500/20 shadow-[0_0_24px_rgba(16,185,129,0.25)] ring-1 ring-emerald-400/50"
+                : "border-emerald-500/30 hover:border-emerald-400/50 bg-gradient-to-br from-emerald-500/[0.08] to-slate-950/60 shadow-sm"
             }`}
           >
-            <div className="flex items-center justify-between text-xs text-amber-300">
+            <div className="flex items-center justify-between text-xs text-emerald-300">
               <span className="font-bold uppercase tracking-wider flex items-center gap-1.5">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
                 </span>
                 In Progress
               </span>
-              <CircleDot className="h-4 w-4 text-amber-400" aria-hidden="true" />
+              <CircleDot className="h-4 w-4 text-emerald-400" aria-hidden="true" />
             </div>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-2xl sm:text-3xl font-extrabold text-amber-300">{stats.inProgress}</span>
-              <span className="text-[11px] text-amber-400/80 font-bold uppercase tracking-wider">active</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-emerald-300">{stats.inProgress}</span>
+              <span className="text-[11px] text-emerald-400/80 font-bold uppercase tracking-wider">active</span>
             </div>
           </button>
 
-          {/* Card 4: Completed (Emerald) */}
+          {/* Card 4: Completed (Crisp White / Emerald) */}
           <button
             type="button"
             onClick={() => setActiveTab("complete")}
             className={`p-4 sm:p-5 rounded-2xl glass transition-all text-left flex flex-col justify-between border ${
               activeTab === "complete"
-                ? "border-emerald-400/50 bg-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.2)] ring-1 ring-emerald-400/30"
-                : "border-emerald-500/20 hover:border-emerald-500/40 bg-slate-950/50"
+                ? "border-white/50 bg-white/10 shadow-[0_0_20px_rgba(255,255,255,0.15)] ring-1 ring-white/30"
+                : "border-white/20 hover:border-white/40 bg-slate-950/50"
             }`}
           >
-            <div className="flex items-center justify-between text-xs text-emerald-400">
+            <div className="flex items-center justify-between text-xs text-white">
               <span className="font-semibold uppercase tracking-wider">Completed</span>
               <CheckCircle2 className="h-4 w-4 text-emerald-400" aria-hidden="true" />
             </div>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-2xl sm:text-3xl font-extrabold text-emerald-300">{stats.complete}</span>
-              <span className="text-[11px] text-emerald-500/80 font-medium">done</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-white">{stats.complete}</span>
+              <span className="text-[11px] text-emerald-400/80 font-medium">done</span>
             </div>
           </button>
         </div>
@@ -358,7 +358,7 @@ export function TaskBoard({
         <div
           role="tablist"
           aria-label="Filter tasks by status"
-          className="flex items-center p-1 rounded-xl glass border border-amber-500/20 gap-1 overflow-x-auto scrollbar-none"
+          className="flex items-center p-1 rounded-xl glass border border-emerald-500/20 gap-1 overflow-x-auto scrollbar-none"
         >
           {tabList.map((tab) => {
             const isSelected = activeTab === tab.key;
@@ -370,17 +370,17 @@ export function TaskBoard({
                 type="button"
                 aria-selected={isSelected}
                 onClick={() => setActiveTab(tab.key)}
-                className={`flex items-center gap-2 px-3.5 py-2 min-h-[44px] sm:min-h-[36px] rounded-lg text-xs font-semibold transition-all select-none whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 ${
+                className={`flex items-center gap-2 px-3.5 py-2 min-h-[44px] sm:min-h-[36px] rounded-lg text-xs font-semibold transition-all select-none whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 ${
                   isSelected
-                    ? "bg-gradient-to-r from-amber-500/25 via-amber-500/15 to-yellow-500/20 text-amber-300 border border-amber-400/40 shadow-sm shadow-amber-500/10"
-                    : "text-slate-300 hover:text-amber-200 hover:bg-amber-500/[0.08] border border-transparent"
+                    ? "bg-gradient-to-r from-emerald-500/25 via-emerald-500/15 to-teal-500/20 text-emerald-300 border border-emerald-400/40 shadow-sm shadow-emerald-500/10"
+                    : "text-slate-300 hover:text-emerald-200 hover:bg-emerald-500/[0.08] border border-transparent"
                 }`}
               >
                 <span>{tab.label}</span>
                 <span
                   className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
                     isSelected
-                      ? "bg-amber-400 text-slate-950 shadow-sm"
+                      ? "bg-emerald-400 text-slate-950 shadow-sm"
                       : "bg-white/10 text-slate-300"
                   }`}
                 >
@@ -405,14 +405,14 @@ export function TaskBoard({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search tasks…"
-            className="w-full pl-9 pr-8 py-2 rounded-xl text-sm bg-slate-950/70 border border-amber-500/20 text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 focus:border-amber-400/50 transition-colors shadow-inner"
+            className="w-full pl-9 pr-8 py-2 rounded-xl text-sm bg-slate-950/70 border border-emerald-500/20 text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 focus:border-emerald-400/50 transition-colors shadow-inner"
           />
           {searchQuery && (
             <button
               type="button"
               onClick={() => setSearchQuery("")}
               aria-label="Clear search query"
-              className="absolute inset-y-0 right-0 min-h-[44px] min-w-[44px] flex items-center justify-center text-slate-400 hover:text-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+              className="absolute inset-y-0 right-0 min-h-[44px] min-w-[44px] flex items-center justify-center text-slate-400 hover:text-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400"
             >
               <X className="h-4 w-4" aria-hidden="true" />
             </button>
@@ -423,8 +423,8 @@ export function TaskBoard({
       {/* Content Area: Task List or Specific Empty States */}
       {tasks.length === 0 ? (
         /* Empty State (a): No tasks at all */
-        <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-16 rounded-3xl glass border border-amber-500/20 text-center my-6">
-          <div className="relative h-20 w-20 rounded-3xl bg-gradient-to-br from-amber-400 via-amber-500 to-yellow-600 border border-amber-300/40 flex items-center justify-center text-slate-950 mb-6 shadow-xl shadow-amber-500/20">
+        <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-16 rounded-3xl glass border border-emerald-500/20 text-center my-6">
+          <div className="relative h-20 w-20 rounded-3xl bg-gradient-to-br from-emerald-400 via-emerald-500 to-teal-600 border border-emerald-300/40 flex items-center justify-center text-slate-950 mb-6 shadow-xl shadow-emerald-500/20">
             <ClipboardList className="h-10 w-10 stroke-[2.5]" aria-hidden="true" />
           </div>
           <h2 className="text-xl font-bold text-slate-100 mb-2">

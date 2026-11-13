@@ -29,8 +29,8 @@ export function StatusChipsTile({
       status: "in_progress",
       href: "/tasks?status=in_progress",
       icon: CircleDot,
-      color: "text-amber-400 group-hover:text-amber-300",
-      badge: "bg-amber-500/15 text-amber-300 border-amber-500/30",
+      color: "text-emerald-400 group-hover:text-emerald-300",
+      badge: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30 font-bold",
     },
     {
       label: "Complete",
@@ -38,18 +38,18 @@ export function StatusChipsTile({
       status: "complete",
       href: "/tasks?status=complete",
       icon: CheckCircle2,
-      color: "text-emerald-400 group-hover:text-emerald-300",
-      badge: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
+      color: "text-white group-hover:text-emerald-200",
+      badge: "bg-white/10 text-white border-white/20 font-bold",
     },
   ];
 
   return (
-    <div className="glass gold-card-hover border border-amber-500/20 p-6 sm:p-8 rounded-3xl flex flex-col justify-between shadow-xl gap-4">
+    <div className="glass emerald-card-hover border border-emerald-500/20 p-6 sm:p-8 rounded-3xl flex flex-col justify-between shadow-xl gap-4">
       <div className="flex items-center justify-between text-xs font-semibold text-slate-300">
-        <span className="uppercase tracking-wider text-amber-400">By Status</span>
+        <span className="uppercase tracking-wider text-emerald-400">By Status</span>
         <Link
           href="/tasks"
-          className="text-xs text-amber-400 hover:text-amber-300 hover:underline flex items-center gap-1 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 rounded"
+          className="text-xs text-emerald-400 hover:text-emerald-300 hover:underline flex items-center gap-1 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 rounded"
         >
           <span>View all</span>
           <ChevronRight className="h-3 w-3" aria-hidden="true" />
@@ -63,7 +63,7 @@ export function StatusChipsTile({
             <Link
               key={chip.status}
               href={chip.href}
-              className="group flex items-center justify-between p-3 rounded-2xl bg-slate-950/50 hover:bg-slate-900/80 border border-amber-500/15 hover:border-amber-400/35 transition-all shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"
+              className="group flex items-center justify-between p-3 rounded-2xl bg-slate-950/50 hover:bg-slate-900/80 border border-emerald-500/15 hover:border-emerald-400/35 transition-all shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400"
               aria-label={`${chip.label}: ${chip.count} tasks (click to filter)`}
             >
               <div className="flex items-center gap-3">

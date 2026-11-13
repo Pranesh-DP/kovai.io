@@ -8,7 +8,7 @@ import {
   Loader2,
   Layers,
   AlertCircle,
-  Sparkles,
+  CheckSquare,
   ShieldCheck,
   Zap,
   Lock,
@@ -43,28 +43,28 @@ export function LoginForm() {
   }
 
   return (
-    <div className="w-full max-w-md glass-strong border border-amber-500/30 p-8 sm:p-10 text-center shadow-[0_20px_70px_rgba(0,0,0,0.85)] rounded-3xl flex flex-col items-center relative overflow-hidden">
-      {/* Decorative Golden Top Shimmer Arc */}
-      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-80" />
-      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-32 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
+    <div className="w-full max-w-md glass-strong border border-emerald-500/30 p-8 sm:p-10 text-center shadow-[0_20px_70px_rgba(0,0,0,0.85)] rounded-3xl flex flex-col items-center relative overflow-hidden">
+      {/* Decorative Emerald Top Shimmer Arc */}
+      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-80" />
+      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-32 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
 
       {/* Pill Badge */}
-      <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 via-yellow-500/15 to-amber-500/20 border border-amber-400/35 text-amber-300 text-xs font-bold uppercase tracking-widest mb-6 shadow-[0_0_18px_rgba(245,158,11,0.2)]">
-        <Sparkles className="h-3.5 w-3.5 text-amber-400" />
-        <span>Deliberate Focus Studio</span>
+      <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-emerald-500/20 via-teal-500/15 to-emerald-500/20 border border-emerald-400/35 text-emerald-300 text-xs font-bold uppercase tracking-widest mb-6 shadow-[0_0_18px_rgba(16,185,129,0.2)]">
+        <CheckSquare className="h-3.5 w-3.5 text-emerald-400" />
+        <span>Focus & Task Studio</span>
       </div>
 
       {/* Brand Crest with Radiant Orbital Aura */}
       <div className="relative mb-6 group">
-        <div className="absolute -inset-2 rounded-3xl bg-gradient-to-r from-amber-500/40 via-yellow-400/30 to-amber-600/40 blur-xl opacity-80 group-hover:opacity-100 transition-opacity" />
-        <div className="relative h-20 w-20 rounded-3xl bg-gradient-to-br from-amber-300 via-amber-400 to-yellow-600 border-2 border-amber-200/70 flex items-center justify-center text-slate-950 shadow-[0_0_30px_rgba(245,158,11,0.45)]">
+        <div className="absolute -inset-2 rounded-3xl bg-gradient-to-r from-emerald-500/40 via-teal-400/30 to-emerald-600/40 blur-xl opacity-80 group-hover:opacity-100 transition-opacity" />
+        <div className="relative h-20 w-20 rounded-3xl bg-gradient-to-br from-emerald-400 via-emerald-500 to-teal-600 border-2 border-emerald-300/70 flex items-center justify-center text-slate-950 shadow-[0_0_30px_rgba(16,185,129,0.45)]">
           <Layers className="h-10 w-10 stroke-[2.5]" aria-hidden="true" />
         </div>
       </div>
 
       {/* Header & Tagline */}
       <div className="space-y-2 mb-8">
-        <h1 className="text-3xl sm:text-4xl font-black tracking-tight bg-gradient-to-r from-slate-50 via-amber-100 to-amber-300 bg-clip-text text-transparent">
+        <h1 className="text-3xl sm:text-4xl font-black tracking-tight bg-gradient-to-r from-white via-emerald-100 to-emerald-300 bg-clip-text text-transparent">
           Clearpane
         </h1>
         <p className="text-sm text-slate-300 max-w-xs mx-auto leading-relaxed">
@@ -90,7 +90,7 @@ export function LoginForm() {
         disabled={loading}
         aria-busy={loading}
         aria-label="Continue with Google"
-        className="w-full flex items-center justify-center gap-3.5 py-4 px-6 rounded-2xl font-bold text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-300 hover:via-yellow-300 hover:to-amber-400 border border-amber-200/60 transition-all duration-300 shadow-[0_8px_30px_rgba(245,158,11,0.35)] hover:shadow-[0_12px_40px_rgba(245,158,11,0.5)] hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 disabled:opacity-50 disabled:cursor-not-allowed select-none animate-shimmer"
+        className="w-full flex items-center justify-center gap-3.5 py-4 px-6 rounded-2xl font-bold text-sm text-slate-950 bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-500 hover:from-emerald-300 hover:via-emerald-400 hover:to-teal-400 border border-emerald-200/60 transition-all duration-300 shadow-[0_8px_30px_rgba(16,185,129,0.35)] hover:shadow-[0_12px_40px_rgba(16,185,129,0.5)] hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 disabled:opacity-50 disabled:cursor-not-allowed select-none animate-shimmer"
       >
         {loading ? (
           <>
@@ -126,20 +126,20 @@ export function LoginForm() {
         )}
       </button>
 
-      {/* 3 Pillar Feature Cards (Reference: TaskPilot Image 6) */}
-      <div className="grid grid-cols-3 gap-2.5 w-full mt-8 pt-6 border-t border-amber-500/20">
-        <div className="flex flex-col items-center gap-1 p-2.5 rounded-xl bg-slate-950/60 border border-amber-500/15 text-center">
-          <ShieldCheck className="h-4 w-4 text-amber-400 shrink-0" />
+      {/* 3 Pillar Feature Cards */}
+      <div className="grid grid-cols-3 gap-2.5 w-full mt-8 pt-6 border-t border-emerald-500/20">
+        <div className="flex flex-col items-center gap-1 p-2.5 rounded-xl bg-slate-950/60 border border-emerald-500/15 text-center">
+          <ShieldCheck className="h-4 w-4 text-emerald-400 shrink-0" />
           <span className="text-[11px] font-bold text-slate-200">Secure</span>
           <span className="text-[9px] text-slate-400">Google PKCE</span>
         </div>
-        <div className="flex flex-col items-center gap-1 p-2.5 rounded-xl bg-slate-950/60 border border-amber-500/15 text-center">
-          <Zap className="h-4 w-4 text-amber-400 shrink-0" />
+        <div className="flex flex-col items-center gap-1 p-2.5 rounded-xl bg-slate-950/60 border border-emerald-500/15 text-center">
+          <Zap className="h-4 w-4 text-emerald-400 shrink-0" />
           <span className="text-[11px] font-bold text-slate-200">Instant</span>
           <span className="text-[9px] text-slate-400">Optimistic UI</span>
         </div>
-        <div className="flex flex-col items-center gap-1 p-2.5 rounded-xl bg-slate-950/60 border border-amber-500/15 text-center">
-          <Lock className="h-4 w-4 text-amber-400 shrink-0" />
+        <div className="flex flex-col items-center gap-1 p-2.5 rounded-xl bg-slate-950/60 border border-emerald-500/15 text-center">
+          <Lock className="h-4 w-4 text-emerald-400 shrink-0" />
           <span className="text-[11px] font-bold text-slate-200">Private</span>
           <span className="text-[9px] text-slate-400">Postgres RLS</span>
         </div>
@@ -149,7 +149,7 @@ export function LoginForm() {
       <div className="mt-6 pt-4 border-t border-white/5 w-full">
         <Link
           href="/preview"
-          className="inline-flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 font-bold hover:underline transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 rounded px-2 py-1"
+          className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 font-bold hover:underline transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 rounded px-2 py-1"
         >
           <span>Explore Live Demo (No Login Required)</span>
           <ArrowRight className="h-3.5 w-3.5" />

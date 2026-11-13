@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased dark`}>
-      <body className="min-h-full font-sans bg-[#060709] text-slate-100 flex flex-col selection:bg-amber-500/30 selection:text-amber-200">
+      <body className="min-h-full font-sans bg-[#060B08] text-white flex flex-col selection:bg-emerald-500/30 selection:text-emerald-200">
         <div className="bg-glows" aria-hidden="true" />
         <ToastProvider>
           {children}

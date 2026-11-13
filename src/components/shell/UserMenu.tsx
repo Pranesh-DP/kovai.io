@@ -42,7 +42,7 @@ export function UserMenu({
     >
       <div className="flex items-center gap-3 min-w-0">
         <div
-          className="relative h-9 w-9 rounded-full overflow-hidden bg-gradient-to-br from-amber-500/20 to-amber-600/30 border border-amber-400/40 flex items-center justify-center shrink-0 text-xs font-bold text-amber-300 shadow-sm"
+          className="relative h-9 w-9 rounded-full overflow-hidden bg-gradient-to-br from-emerald-500/20 to-teal-600/30 border border-emerald-400/40 flex items-center justify-center shrink-0 text-xs font-bold text-emerald-300 shadow-sm"
           title={`${name} (${email})`}
         >
           {avatarUrl && !imageError ? (
@@ -62,7 +62,7 @@ export function UserMenu({
 
         {!collapsed && (
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-semibold text-slate-100 truncate">
+            <p className="text-sm font-semibold text-white truncate">
               {name}
             </p>
             <p className="text-xs text-slate-400 truncate" title={email}>
@@ -77,7 +77,7 @@ export function UserMenu({
           type="submit"
           title="Sign out"
           aria-label="Sign out"
-          className="p-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-amber-300 hover:bg-amber-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 transition-colors"
+          className="p-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-emerald-300 hover:bg-emerald-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 transition-colors"
         >
           <LogOut className="h-4 w-4" aria-hidden="true" />
         </button>

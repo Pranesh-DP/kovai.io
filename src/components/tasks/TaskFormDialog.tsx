@@ -304,12 +304,12 @@ export function TaskFormDialog({
               htmlFor="task-title-input"
               className="text-xs font-medium text-slate-200"
             >
-              Title <span className="text-amber-400">*</span>
+              Title <span className="text-emerald-400">*</span>
             </label>
             {title.length > 100 && (
               <span
                 className={`text-[11px] font-mono ${
-                  title.length >= 120 ? "text-amber-400" : "text-slate-400"
+                  title.length >= 120 ? "text-emerald-400" : "text-slate-400"
                 }`}
               >
                 {title.length}/120
@@ -340,10 +340,10 @@ export function TaskFormDialog({
             aria-describedby={
               fieldErrors.title ? "task-title-error" : undefined
             }
-            className={`w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-950/70 border text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
+            className={`w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-950/70 border text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
               fieldErrors.title
                 ? "border-red-500/60 focus:border-red-500"
-                : "border-amber-500/20 focus:border-amber-400/50"
+                : "border-emerald-500/20 focus:border-emerald-400/50"
             }`}
           />
           {fieldErrors.title && (
@@ -369,7 +369,7 @@ export function TaskFormDialog({
             </label>
             <span
               className={`text-[11px] font-mono ${
-                notes.length >= 1000 ? "text-amber-400" : "text-slate-400"
+                notes.length >= 1000 ? "text-emerald-400" : "text-slate-400"
               }`}
             >
               {notes.length}/1000
@@ -392,10 +392,10 @@ export function TaskFormDialog({
             aria-describedby={
               fieldErrors.notes ? "task-notes-error" : undefined
             }
-            className={`w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-950/70 border text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed ${
+            className={`w-full px-3.5 py-2.5 rounded-xl text-sm bg-slate-950/70 border text-slate-100 placeholder-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed ${
               fieldErrors.notes
                 ? "border-red-500/60 focus:border-red-500"
-                : "border-amber-500/20 focus:border-amber-400/50"
+                : "border-emerald-500/20 focus:border-emerald-400/50"
             }`}
           />
           {fieldErrors.notes && (
@@ -418,7 +418,7 @@ export function TaskFormDialog({
             <div
               role="radiogroup"
               aria-label="Initial task status"
-              className="flex items-center p-1 rounded-xl bg-slate-950/70 border border-amber-500/20 gap-1 shadow-inner"
+              className="flex items-center p-1 rounded-xl bg-slate-950/70 border border-emerald-500/20 gap-1 shadow-inner"
             >
               {STATUS_OPTIONS.map((opt) => {
                 const isSelected = status === opt.status;
@@ -432,13 +432,13 @@ export function TaskFormDialog({
                     aria-checked={isSelected}
                     disabled={isSaving}
                     onClick={() => setStatus(opt.status)}
-                    className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-semibold transition-all select-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400 ${
+                    className={`flex-1 flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-semibold transition-all select-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 ${
                       isSelected
                         ? opt.status === "in_progress"
-                          ? "bg-amber-500/20 text-amber-300 border border-amber-400/40 shadow-sm"
+                          ? "bg-emerald-500/25 text-emerald-300 border border-emerald-400/50 shadow-sm"
                           : opt.status === "complete"
-                            ? "bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 shadow-sm"
-                            : "bg-white/15 text-white shadow-sm border border-white/20"
+                            ? "bg-white/15 text-white border border-white/30 shadow-sm"
+                            : "bg-white/10 text-white shadow-sm border border-white/20"
                         : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
                     }`}
                   >
@@ -446,9 +446,9 @@ export function TaskFormDialog({
                       className={`h-3.5 w-3.5 shrink-0 ${
                         isSelected
                           ? opt.status === "complete"
-                            ? "text-emerald-400"
+                            ? "text-white"
                             : opt.status === "in_progress"
-                              ? "text-amber-400"
+                              ? "text-emerald-400"
                               : "text-slate-200"
                           : "text-slate-500"
                       }`}
@@ -463,7 +463,7 @@ export function TaskFormDialog({
         )}
 
         {/* Actions row: Cancel & Save */}
-        <div className="flex items-center justify-end gap-3 mt-4 pt-3 border-t border-amber-500/20">
+        <div className="flex items-center justify-end gap-3 mt-4 pt-3 border-t border-emerald-500/20">
           <Button
             type="button"
             variant="ghost"
