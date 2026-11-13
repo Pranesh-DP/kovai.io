@@ -43,9 +43,9 @@ export const config = {
      * Match all paths except:
      *  - _next/static and _next/image (Next.js internals)
      *  - favicon.ico, sitemap.xml, robots.txt
-     *  - /auth/callback (handled by route handler, must not redirect)
+     *  - /auth/callback and /login/auth/callback (handled by route handlers, must not redirect)
      *  - Files with extensions (images, fonts, etc.)
      */
-    "/((?!_next/static|_next/image|favicon\\.ico|sitemap\\.xml|robots\\.txt|auth/callback|[^/]+\\.[^/]+$).*)",
+    "/((?!_next/static|_next/image|favicon\\.ico|sitemap\\.xml|robots\\.txt|auth/callback|login/auth/callback|[^/]+\\.[^/]+$).*)",
   ],
 };

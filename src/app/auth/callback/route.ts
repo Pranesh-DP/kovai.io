@@ -10,9 +10,8 @@ export async function GET(request: NextRequest) {
   const rawNext = searchParams.get("next");
 
   // Prefer configured production site URL; fallback to request origin
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-    ? process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "")
-    : origin;
+  const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || origin;
+  const siteUrl = rawSiteUrl.replace(/\/+$/, "").replace(/\/login$/, "");
 
   // If the OAuth provider returned an error (e.g. user denied consent), bail.
   if (error) {

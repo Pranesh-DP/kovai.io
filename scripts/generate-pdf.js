@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require("fs");
 const path = require("path");
 const { chromium } = require("@playwright/test");
@@ -435,3 +436,4 @@ generatePDF().catch((err) => {
   console.error("PDF generation failed:", err);
   process.exit(1);
 });
+

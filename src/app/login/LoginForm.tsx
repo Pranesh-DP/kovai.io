@@ -16,8 +16,11 @@ export function LoginForm() {
     setLoading(true);
     try {
       const supabase = createClient();
-      const siteUrl =
-        process.env.NEXT_PUBLIC_SITE_URL ?? window.location.origin;
+      const rawSiteUrl =
+        process.env.NEXT_PUBLIC_SITE_URL ||
+        (typeof window !== "undefined" ? window.location.origin : "");
+      // Clean siteUrl to prevent accidental nested /login or trailing slashes
+      const siteUrl = rawSiteUrl.replace(/\/+$/, "").replace(/\/login$/, "");
       await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
