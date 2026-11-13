@@ -32,3 +32,4 @@ This log records notable edge cases, regressions, and defects encountered during
 | 4 | Open-redirect risk via backslash bypass (`/\evil.com`) | Browsers normalize `/\` to `//`, bypassing standard `startsWith("//")` guards. | Extracted validation into `src/lib/safe-redirect.ts` with strict checks against backslashes and non-relative paths. | Resolved |
 | 5 | Missing `h1` landmark on mobile viewports | `AppHeader` used `hidden md:flex`, hiding the page's single `h1` from mobile screen readers. | Adjusted `AppHeader` to `sr-only md:not-sr-only md:flex` so screen readers retain the proper heading level across all breakpoints. | Resolved |
 | 6 | JSDOM missing `@testing-library/jest-dom` custom matchers | Test environment lacked `toBeInTheDocument` extensions. | Standardized unit tests to native DOM assertions (`toBeDefined()`, `document.body.contains()`) for robust test portability. | Resolved |
+

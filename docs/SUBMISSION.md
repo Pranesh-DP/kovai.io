@@ -63,3 +63,4 @@ The following required documentation files are available in this repository:
   - Playwright end-to-end spec in `e2e/tasks.spec.ts` verifying unauthenticated route protection and full task lifecycle.
 - [x] **CI/CD Automation**:
   - GitHub Actions workflow (`.github/workflows/ci.yml`) runs `npm ci`, `typecheck`, `lint`, `test`, and `build` on every push and pull request.
+
